@@ -4,11 +4,11 @@
 // Uses Adalight protocol and is compatible with Boblight, Prismatik etc
 // "Magic Word" for synchronisation is 'Ada' followed by LED High, Low and Checksum
 //
-#include <FastSPI_LED2.h>
+#include "FastLED.h"
 ///// User definitions /////
 
 // Define the number of LEDs
-#define NUM_LEDS 78
+#define NUM_LEDS 46
 
 // Define SPI Pin
 #define PIN 6
@@ -31,7 +31,7 @@ CRGB leds[NUM_LEDS];
 void setup()
 {
   
-  FastLED.addLeds<WS2812, PIN, RGB>(leds, NUM_LEDS);
+  FastLED.addLeds<WS2812B, PIN, GRB>(leds, NUM_LEDS);
   
   // initial RGB flash
   LEDS.showColor(CRGB(255, 0, 0));
